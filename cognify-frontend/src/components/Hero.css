@@ -487,7 +487,7 @@
   margin: 0;
 }
 
-/* CTA Section */
+
 .cta-section {
   max-width: 1400px;
   margin: 0 auto;
@@ -557,7 +557,7 @@
   transform: translateY(-2px) scale(1.02);
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -724,4 +724,119 @@
   .cta-section p {
     font-size: 0.9rem;
   }
+}
+
+
+
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
+  overflow: hidden;
+}
+
+.hero-left {
+  max-width: 480px;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.purple {
+  color: #c4a5ff;
+}
+
+.hero-text {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+.hero-btn {
+  margin-top: 30px;
+  background: linear-gradient(to right, #6b21a8, #c4a5ff);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+.arrow {
+  font-size: 24px;
+}
+
+.hero-right {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-rotation {
+  position: absolute;
+  inset: 0;
+  animation: rotateOrbit 12s linear infinite;
+}
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-block {
+  transform: translateY(-180px);
+  width: 40px;
+  height: 40px;
+  background: rgba(196, 165, 255, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(196, 165, 255, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.girl-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 4.5rem;
+  margin-left: 4.3rem;
+  box-shadow: 0 0 30px #a78bfa;
 }
