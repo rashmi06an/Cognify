@@ -1,0 +1,494 @@
+.dashboard-page {
+  min-height: 100vh;
+  padding: 96px 72px 80px;
+  background:
+    radial-gradient(60% 40% at 50% 85%, #4c2bb3 0%, transparent 55%),
+    #05030b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+.dashboard-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 72px;
+}
+
+.dashboard-avatar-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-shadow: none;
+}
+
+.avatar-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: url("../assets/dashboard-avatar.png") center/contain no-repeat;
+  box-shadow: 0 0 40px rgba(108, 82, 255, 0.45);
+}
+
+.dashboard-greeting {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+}
+
+.dashboard-greeting-highlight {
+  color: #b598ff;
+}
+
+.dashboard-title {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.dashboard-title-highlight {
+  color: #b598ff;
+}
+
+.dashboard-subtitle {
+  margin: 0;
+  font-size: 20px;
+  color: #f2ecff;
+}
+
+.dashboard-start {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f2ecff;
+}
+
+.start-arrow {
+  font-size: 26px;
+}
+
+.dashboard-grid-section {
+  margin-bottom: 32px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.dashboard-card {
+  padding: 32px 40px 36px;
+  border-radius: 28px;
+  background:
+    radial-gradient(140% 180% at 0% 0%, #5b35c7 0%, #221139 45%, #12081e 90%);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.card-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  position: relative;
+  background: radial-gradient(120% 150% at 10% 0%, #6b4bff 0%, #2b0f4a 55%, #0a0315 100%);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.card-icon::before,
+.card-icon::after {
+  content: "";
+  position: absolute;
+}
+
+/* Career Assessment: badge with star */
+.card-icon--assessment::before {
+  left: 32px;
+  top: 18px;
+  width: 56px;
+  height: 90px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #7b5cff 0%, #3b1f7a 80%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.card-icon--assessment::after {
+  left: 46px;
+  top: 44px;
+  width: 28px;
+  height: 28px;
+  background: conic-gradient(from 0deg, #ffffff, #f6e6ff, #9fd3ff, #ffffff);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Scholarships: glowing orb */
+.card-icon--scholarships::before {
+  left: 32px;
+  top: 34px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffe9ff 0%, #ffb6ff 30%, #ff7ad9 55%, #ffb96b 85%);
+  box-shadow: 0 0 40px rgba(255, 142, 255, 0.8);
+}
+
+.card-icon--scholarships::after {
+  left: 20px;
+  bottom: 22px;
+  width: 96px;
+  height: 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
+}
+
+/* College Finder: hat */
+.card-icon--college::before {
+  left: 16px;
+  bottom: 30px;
+  width: 98px;
+  height: 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #7a4bff 0%, #3a1c86 60%, #0a0315 100%);
+}
+
+.card-icon--college::after {
+  left: 40px;
+  bottom: 54px;
+  width: 56px;
+  height: 42px;
+  border-radius: 60% 60% 40% 40%;
+  background: linear-gradient(160deg, #bba7ff 0%, #7f5cff 45%, #43209a 100%);
+}
+
+/* Career Explorer: jellyfish / comet */
+.card-icon--explorer::before {
+  left: 30px;
+  top: 34px;
+  width: 70px;
+  height: 70px;
+  border-radius: 60% 40% 50% 50%;
+  transform: rotate(-22deg);
+  background: radial-gradient(circle at 10% 0%, #c6d2ff 0%, #8fb4ff 30%, #6b4bff 65%, #321182 100%);
+}
+
+.card-icon--explorer::after {
+  right: -18px;
+  bottom: 18px;
+  width: 110px;
+  height: 34px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0% 50%, rgba(123, 173, 255, 0.9) 0%, rgba(123, 173, 255, 0) 70%);
+}
+
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 16px;
+  color: #f0e7ff;
+}
+
+.dashboard-card-btn {
+  margin-top: 24px;
+  align-self: flex-start;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid #c9b7ff;
+  background: rgba(7, 2, 24, 0.3);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.dashboard-card-btn:hover {
+  background: #f5f3ff;
+  color: #1a102a;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.dashboard-upper-section {
+  background: #05030b;
+  padding: 40px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dashboard-upper-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(60% 40% at 50% 85%, #4c2bb3 0%, transparent 55%);
+  opacity: 0.5;
+}
+
+.dashboard-avatar-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-hero-text {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.dashboard-hero-subtext {
+  margin: 0;
+  font-size: 20px;
+  color: #f2ecff;
+}
+
+/* Lower dashboard */
+
+.dashboard-lower {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Quick Actions */
+
+.quick-actions-title {
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.quick-actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.quick-action-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  min-height: 220px;
+}
+
+.quick-action-card--scholarships {
+  padding-left: 80px;
+}
+
+.quick-action-card--chat {
+  padding-right: 80px;
+}
+
+.quick-action-text h3 {
+  margin: 0 0 8px;
+  font-size: 31px;
+  font-weight: 700;
+  color: lightblue;
+}
+
+.quick-action-text p {
+  margin: 0;
+  font-size: 18px;
+  color: #f0e7ff;
+}
+
+.quick-action-visual {
+  position: relative;
+  width: 480px;
+  height: 300px;
+  border-radius: 32px;
+  background: radial-gradient(circle at 50% 0%, rgba(140, 110, 255, 0.55) 0%, rgba(12, 3, 30, 0.8) 55%, #05030b 100%);
+  box-shadow: 0 0 90px rgba(140, 110, 255, 0.6);
+  overflow: hidden;
+}
+
+.quick-action-visual--right-glow {
+  margin-left: auto;
+}
+
+.quick-action-visual--left-glow {
+  margin-right: auto;
+}
+
+/* Optional: background screenshots (replace with your own image paths) */
+
+.quick-action-card--scholarships .quick-action-visual {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(140, 110, 255, 0.45) 0%, rgba(12, 3, 30, 0.7) 55%, #05030b 100%),
+    url("../assets/Browse_scholership.png") center/contain no-repeat;
+}
+
+.quick-action-card--chat .quick-action-visual {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(140, 110, 255, 0.45) 0%, rgba(12, 3, 30, 0.7) 55%, #05030b 100%),
+    url("../assets/AI_Expart.png") center/contain no-repeat;
+}
+
+.quick-action-sparkles {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+/* Journey card */
+
+.journey-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.journey-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.journey-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 32px 40px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #4b2fb9 0%, #12081e 100%);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+}
+
+.journey-steps {
+  flex: 2;
+}
+
+.journey-steps-status {
+  margin: 0 0 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.journey-step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.journey-step:first-of-type {
+  padding-top: 0;
+}
+
+.journey-step:last-of-type {
+  padding-bottom: 0;
+}
+
+.journey-step-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  position: absolute;
+  left: -14px;
+  top: 20px;
+}
+
+.journey-step--completed .journey-step-icon {
+  background: #9b7dff;
+  border-color: #9b7dff;
+}
+
+.journey-step-content h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.journey-step-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #f0e7ff;
+}
+
+.journey-step-btn {
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #b173ff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.journey-progress {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.journey-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.journey-progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.journey-progress-fill {
+  width: 33%;
+  height: 100%;
+  background: #f5f3ff;
+}
+
+@media (max-width: 900px) {
+  .dashboard-page {
+    padding: 88px 20px 56px;
+  }
+
+  .dashboard-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

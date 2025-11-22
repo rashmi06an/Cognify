@@ -381,3 +381,46 @@
     font-size: 0.65rem;
   }
 }
+
+/* Dashboard Specific Navbar Styles */
+.navbar.navbar-dashboard {
+  background: rgba(10, 10, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-menu li a {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.dashboard-menu li a:hover {
+  color: #ffffff;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8176AF 0%, #C0B7E8 100%);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-profile:hover {
+  transform: scale(1.05);
+}
+
+.profile-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url('https://api.dicebear.com/7.x/avataaars/svg?seed=Felix');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}

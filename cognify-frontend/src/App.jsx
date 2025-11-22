@@ -1,18 +1,33 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Dashboard from './components/Dashboard'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
+
+      <Routes>
+        {/* Landing page when you open the website */}
+        <Route path="/" element={<Hero />} />
+
+        {/* Auth pages */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Post-login dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+
       <Footer />
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
 export default App
