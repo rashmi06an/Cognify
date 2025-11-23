@@ -369,36 +369,39 @@
 }
 
 .journey-title {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .journey-card {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 32px 40px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, #4b2fb9 0%, #12081e 100%);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+  flex-direction: column;
+  padding: 40px 56px 40px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #4b2fb9 0%, #251044 45%, #100619 100%);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.9);
 }
 
 .journey-steps {
-  flex: 2;
+  flex: 1;
+  max-width: 420px;
 }
 
 .journey-steps-status {
   margin: 0 0 24px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .journey-step {
   display: flex;
   gap: 16px;
   padding: 16px 0;
-  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  border-left: 2px solid rgba(255, 255, 255, 0.18);
   position: relative;
+  padding-left: 50px;
 }
 
 .journey-step:first-of-type {
@@ -410,19 +413,23 @@
 }
 
 .journey-step-icon {
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: transparent;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
   border: 2px solid rgba(255, 255, 255, 0.35);
   position: absolute;
-  left: -14px;
-  top: 20px;
+  left: 0px;
+  top: 18px;
+}
+
+.journey-step:first-of-type .journey-step-icon {
+  top: 4px; /* pehla circle thoda upar */
 }
 
 .journey-step--completed .journey-step-icon {
-  background: #9b7dff;
-  border-color: #9b7dff;
+  background: radial-gradient(circle at 30% 20%, #f6f0ff 0%, #c9b1ff 35%, #8d63ff 70%);
+  border-color: #f6f0ff;
 }
 
 .journey-step-content h3 {
@@ -450,10 +457,11 @@
 }
 
 .journey-progress {
-  flex: 1.2;
+  margin-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 16px;
 }
 
@@ -468,14 +476,14 @@
   width: 100%;
   height: 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #e2d5ff;
   overflow: hidden;
 }
 
 .journey-progress-fill {
   width: 33%;
   height: 100%;
-  background: #f5f3ff;
+  background: #111111;
 }
 
 @media (max-width: 900px) {
