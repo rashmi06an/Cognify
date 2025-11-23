@@ -9,6 +9,7 @@ function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const location = useLocation()
   const isDashboard = location.pathname === '/dashboard'
+  const isCareerAssessment = location.pathname === '/career-assessment'
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -45,51 +46,56 @@ function Navbar() {
           <h1>Cognify</h1>
         </div>
 
-        {/* Hamburger Menu */}
-        <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Navigation Links */}
-        <ul className={`navbar-menu ${menuOpen ? 'active' : ''} ${isDashboard ? 'dashboard-menu' : ''}`}>
-          {isDashboard ? (
-            <>
-              <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
-              <li><Link to="/career-quiz" onClick={closeMenu}>Career Quiz</Link></li>
-              <li><Link to="/explore-careers" onClick={closeMenu}>Explore Careers</Link></li>
-              <li><Link to="/find-colleges" onClick={closeMenu}>Find Colleges</Link></li>
-              <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
-              <li><Link to="/expert-chat" onClick={closeMenu}>Expert Chat</Link></li>
-            </>
-          ) : (
-            <>
-              <li><a href="#about" onClick={closeMenu}>About</a></li>
-              <li><a href="#scholarships" onClick={closeMenu}>Scholarships</a></li>
-              <li><a href="#colleges" onClick={closeMenu}>Colleges</a></li>
-              <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
-            </>
-          )}
-        </ul>
-
-        {/* Right Side - Auth Buttons or Profile */}
-        <div className="navbar-auth">
-          {isDashboard ? (
-            <div className="navbar-profile">
-              <div className="profile-icon"></div>
+        {/* When on Career Assessment page, only show logo (no nav links or auth) */}
+        {!isCareerAssessment && (
+          <>
+            {/* Hamburger Menu */}
+            <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-          ) : (
-            <>
-              <Link to="/login">
-                <button className="btn-login" onClick={closeMenu}>Login</button>
-              </Link>
-              <Link to="/signup">
-                <button className="btn-signup" onClick={closeMenu}>Sign Up</button>
-              </Link>
-            </>
-          )}
-        </div>
+
+            {/* Navigation Links */}
+            <ul className={`navbar-menu ${menuOpen ? 'active' : ''} ${isDashboard ? 'dashboard-menu' : ''}`}>
+              {isDashboard ? (
+                <>
+                  <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
+                  <li><Link to="/career-quiz" onClick={closeMenu}>Career Quiz</Link></li>
+                  <li><Link to="/explore-careers" onClick={closeMenu}>Explore Careers</Link></li>
+                  <li><Link to="/find-colleges" onClick={closeMenu}>Find Colleges</Link></li>
+                  <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
+                  <li><Link to="/expert-chat" onClick={closeMenu}>Expert Chat</Link></li>
+                </>
+              ) : (
+                <>
+                  <li><a href="#about" onClick={closeMenu}>About</a></li>
+                  <li><a href="#scholarships" onClick={closeMenu}>Scholarships</a></li>
+                  <li><a href="#colleges" onClick={closeMenu}>Colleges</a></li>
+                  <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
+                </>
+              )}
+            </ul>
+
+            {/* Right Side - Auth Buttons or Profile */}
+            <div className="navbar-auth">
+              {isDashboard ? (
+                <div className="navbar-profile">
+                  <div className="profile-icon"></div>
+                </div>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className="btn-login" onClick={closeMenu}>Login</button>
+                  </Link>
+                  <Link to="/signup">
+                    <button className="btn-signup" onClick={closeMenu}>Sign Up</button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </nav>
   )

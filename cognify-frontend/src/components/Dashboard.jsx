@@ -1,7 +1,9 @@
 import React from "react";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="dashboard-page">
       <div className="dashboard-hero">
@@ -34,7 +36,12 @@ const Dashboard = () => {
                 <p>
                   Discover careers that match your interests and skills perfectly.
                 </p>
-                <button className="dashboard-card-btn">Take Assessment</button>
+                <button
+                  className="dashboard-card-btn"
+                  onClick={() => navigate("/career-assessment")}
+                >
+                  Take Assessment
+                </button>
               </div>
             </div>
           </div>
@@ -132,7 +139,12 @@ const Dashboard = () => {
                 <div className="journey-step-content">
                   <h3>Career Assessment</h3>
                   <p>Take the quiz to get personalized recommendations.</p>
-                  <button className="journey-step-btn">Take Assessment</button>
+                  <button
+                    className="journey-step-btn"
+                    onClick={() => navigate("/career-assessment")}
+                  >
+                    Take Assessment
+                  </button>
                 </div>
               </div>
 
