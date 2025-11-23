@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
+import CareerResults from './components/CareerResults'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
 
         {/* Post-login dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/career-results" element={<CareerResults />} />
+        <Route path="/colleges" element={<CareerResults />} />
       </Routes>
 
       <Footer />

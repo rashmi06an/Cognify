@@ -59,7 +59,7 @@ function Navbar() {
               <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
               <li><Link to="/career-quiz" onClick={closeMenu}>Career Quiz</Link></li>
               <li><Link to="/explore-careers" onClick={closeMenu}>Explore Careers</Link></li>
-              <li><Link to="/find-colleges" onClick={closeMenu}>Find Colleges</Link></li>
+              <li><Link to="/colleges" onClick={closeMenu}>Find Colleges</Link></li>
               <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
               <li><Link to="/expert-chat" onClick={closeMenu}>Expert Chat</Link></li>
             </>
@@ -67,7 +67,7 @@ function Navbar() {
             <>
               <li><a href="#about" onClick={closeMenu}>About</a></li>
               <li><a href="#scholarships" onClick={closeMenu}>Scholarships</a></li>
-              <li><a href="#colleges" onClick={closeMenu}>Colleges</a></li>
+              <li><Link to="/colleges" onClick={closeMenu}>Colleges</Link></li>
               <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
             </>
           )}

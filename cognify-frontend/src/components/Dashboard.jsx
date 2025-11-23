@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="dashboard-page">
       <div className="dashboard-hero">
@@ -60,7 +62,7 @@ const Dashboard = () => {
                 <p>
                   Find top-ranked colleges that align with your career goals.
                 </p>
-                <button className="dashboard-card-btn">Find Colleges</button>
+                <button className="dashboard-card-btn" onClick={() => navigate('/colleges')}>Find Colleges</button>
               </div>
             </div>
           </div>
@@ -81,7 +83,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-{/* Lower dashboard */}
+      {/* Lower dashboard */}
 
       <section className="dashboard-lower">
         <div className="quick-actions">
