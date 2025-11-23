@@ -1,8 +1,16 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // In a real app, we would validate credentials here
+    navigate("/dashboard");
+  };
+
   return (
     <div className="auth-page">
       <div className="auth-card">
@@ -10,12 +18,12 @@ const Login = () => {
         <div className="auth-divider" />
         <h2 className="auth-subtitle">Log in to continue your journey</h2>
 
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleLogin}>
           <div className="auth-row single">
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" required />
           </div>
           <div className="auth-row single">
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" required />
           </div>
 
           <div className="auth-meta">
