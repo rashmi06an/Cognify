@@ -1,186 +1,221 @@
 /* CareerAssessment.css */
 
 .career-assessment-page {
-  min-height: calc(100vh - 80px); /* adjust if your navbar/footer sizes differ */
-  padding: 60px 40px 80px;
+  min-height: 100vh;
+  padding: 80px 20px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(circle at top left, #5b2cff 0, #12001f 45%, #050007 100%);
+  background-color: #050007;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(91, 44, 255, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(124, 59, 255, 0.15) 0%, transparent 40%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
   color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Header text */
-
 .career-assessment-header {
   text-align: center;
-  max-width: 800px;
-  margin-bottom: 40px;
+  max-width: 900px;
+  margin-bottom: 50px;
+  z-index: 2;
 }
 
 .career-assessment-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #E0E0E0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 .career-assessment-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.6;
-  color: #e0c7ff;
+  color: #E0E0E0;
   margin: 0;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Main container and card */
-
 .career-assessment-main {
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index: 2;
 }
 
 .assessment-card {
   position: relative;
   width: 100%;
   max-width: 900px;
-  min-height: 420px;
-  border-radius: 24px;
-  padding: 40px 40px 32px;
-  background: radial-gradient(circle at top, #5a2bff 0, #2b0e52 40%, #130021 100%);
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+  min-height: 550px;
+  border-radius: 20px;
+  padding: 0;
+  background: linear-gradient(180deg, rgba(40, 10, 80, 0.6) 0%, rgba(20, 5, 40, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 59, 255, 0.2);
+  box-shadow: 0 0 100px rgba(91, 44, 255, 0.15);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
-/* Glowing orb at top center */
+/* Glowing orb */
+.assessment-orb-container {
+  position: relative;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
 
 .assessment-orb {
-  position: absolute;
-  top: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 160px;
-  height: 160px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: radial-gradient(circle, #ff8fff 0, #7c3bff 35%, #2b0e52 70%);
+  background: radial-gradient(circle at 30% 30%, #a855f7, #6b21a8);
   box-shadow:
-    0 0 40px rgba(255, 143, 255, 0.6),
-    0 0 80px rgba(124, 59, 255, 0.7);
+    0 0 30px rgba(168, 85, 247, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 2;
 }
 
-/* Greeting + start button */
+.assessment-orb-glow {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 3s infinite ease-in-out;
+}
 
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.5;
+  }
+}
+
+/* Greeting */
 .assessment-greeting {
-  margin-top: 60px;
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 20px 0 40px;
 }
 
-.assessment-start-btn {
-  display: block;
-  margin: 18px auto 26px;
-  padding: 10px 24px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #ff5de6, #8f4bff);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(143, 75, 255, 0.5);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-}
-
-.assessment-start-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(143, 75, 255, 0.6);
-  opacity: 0.95;
+/* Chat container */
+.assessment-chat-container {
+  flex: 1;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Chat bubbles */
-
 .assessment-chat-bubble {
-  max-width: 540px;
-  padding: 14px 18px;
-  border-radius: 18px;
-  font-size: 0.95rem;
+  max-width: 600px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   position: relative;
 }
 
-/* Left (AI) bubble */
-
 .assessment-chat-bubble--left {
-  background: rgba(37, 8, 87, 0.9);
-  color: #f3e6ff;
-  margin-right: auto;
-  margin-top: 8px;
+  background: linear-gradient(90deg, #7c3bff 0%, #9d4edd 100%);
+  color: #FFFFFF;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
 }
-
-.assessment-chat-bubble--left::before {
-  content: "";
-  position: absolute;
-  left: 18px;
-  bottom: -8px;
-  border-width: 8px 8px 0 0;
-  border-style: solid;
-  border-color: rgba(37, 8, 87, 0.9) transparent transparent transparent;
-}
-
-/* Right (user) bubble */
 
 .assessment-chat-bubble--right {
   background: #7c3bff;
-  color: #ffffff;
-  margin-left: auto;
-  margin-top: 16px;
+  color: #FFFFFF;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  margin-top: 40px;
+  /* Spacing as per screenshot */
 }
 
-.assessment-chat-bubble--right::before {
-  content: "";
-  position: absolute;
-  right: 18px;
-  bottom: -8px;
-  border-width: 8px 0 0 8px;
-  border-style: solid;
-  border-color: #7c3bff transparent transparent transparent;
-}
-
-/* Bottom footer strip inside card */
-
-.assessment-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 14px 32px;
-  background: linear-gradient(90deg, #5a2bff, #2b0e52);
+/* Input Area (Footer) */
+.assessment-input-area {
+  margin: 40px 40px 40px;
+  padding: 20px 30px;
+  background: rgba(60, 20, 100, 0.6);
+  border-radius: 16px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
-  color: #f7e9ff;
+  border: 1px solid rgba(124, 59, 255, 0.3);
+}
+
+.input-placeholder {
+  color: #a0aec0;
   font-size: 0.95rem;
 }
 
+.input-send-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.input-send-btn:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive tweaks */
-
 @media (max-width: 768px) {
-  .career-assessment-page {
-    padding: 40px 16px 60px;
-  }
-
   .career-assessment-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .assessment-card {
-    padding: 32px 20px 60px;
+    min-height: auto;
+    padding-bottom: 20px;
   }
 
-  .assessment-orb {
-    width: 130px;
-    height: 130px;
-    top: -60px;
+  .assessment-chat-container {
+    padding: 0 20px;
+  }
+
+  .assessment-input-area {
+    margin: 20px;
+    padding: 16px;
   }
 }
