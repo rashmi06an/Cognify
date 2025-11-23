@@ -5,6 +5,7 @@ import ibmImg from '../assets/IBM.jpg';
 import bitsImg from '../assets/BitsPilani.png';
 import iimImg from '../assets/IIM_Ahmedabad_New.jpg';
 import iiitImg from '../assets/IIIT_Hyderabad.png';
+import iitDelhiImg from '../assets/IIT_Delhi.png';
 
 const CareerResults = () => {
     return (
@@ -86,7 +87,7 @@ const CareerResults = () => {
                     <h2 className="section-title">Featured College Result: IIT Delhi</h2>
                     <div className="featured-card">
                         <div className="featured-image-container">
-                            <div className="featured-image-placeholder">
+                            <div className="featured-image-placeholder" style={{ backgroundImage: `url(${iitDelhiImg})` }}>
                                 <span>IIT DELHI</span>
                             </div>
                         </div>
