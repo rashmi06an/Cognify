@@ -46,6 +46,7 @@ function Navbar() {
           <h1>Cognify</h1>
         </div>
 
+<<<<<<< HEAD
         {/* When on Career Assessment page, only show logo (no nav links or auth) */}
         {!isCareerAssessment && (
           <>
@@ -54,6 +55,41 @@ function Navbar() {
               <span></span>
               <span></span>
               <span></span>
+=======
+        {/* Hamburger Menu */}
+        <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className={`navbar-menu ${menuOpen ? 'active' : ''} ${isDashboard ? 'dashboard-menu' : ''}`}>
+          {isDashboard ? (
+            <>
+              <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
+              <li><Link to="/career-quiz" onClick={closeMenu}>Career Quiz</Link></li>
+              <li><Link to="/explore-careers" onClick={closeMenu}>Explore Careers</Link></li>
+              <li><Link to="/colleges" onClick={closeMenu}>Find Colleges</Link></li>
+              <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
+              <li><Link to="/expert-chat" onClick={closeMenu}>Expert Chat</Link></li>
+            </>
+          ) : (
+            <>
+              <li><a href="#about" onClick={closeMenu}>About</a></li>
+              <li><a href="#scholarships" onClick={closeMenu}>Scholarships</a></li>
+              <li><Link to="/colleges" onClick={closeMenu}>Colleges</Link></li>
+              <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
+            </>
+          )}
+        </ul>
+
+        {/* Right Side - Auth Buttons or Profile */}
+        <div className="navbar-auth">
+          {isDashboard ? (
+            <div className="navbar-profile">
+              <div className="profile-icon"></div>
+>>>>>>> 439da3efe8b0b9bdb5d730f56dc56872a4a56262
             </div>
 
             {/* Navigation Links */}
