@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 import CareerAssessment from './components/CareerAssessment'
 import CareerResults from './components/CareerResults'
+import ScholarshipPage from './components/ScholarshipPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/career-assessment" element={<CareerAssessment />} />
         <Route path="/career-results" element={<CareerResults />} />
         <Route path="/colleges" element={<CareerResults />} />
+        <Route path="/scholarships" element={<ScholarshipPage />} />
       </Routes>
 
       <Footer />
