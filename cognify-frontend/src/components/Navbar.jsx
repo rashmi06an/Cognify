@@ -42,8 +42,10 @@ function Navbar() {
       <div className="navbar-container">
         {/* Logo/Brand Section */}
         <div className="navbar-brand">
-          <img src={logoImg} alt="Cognify Logo" className="navbar-logo" />
-          <h1>Cognify</h1>
+          <Link to={(location.pathname === '/colleges' || location.pathname === '/scholarships') ? '/dashboard' : '/'} className="navbar-logo-link">
+            <img src={logoImg} alt="Cognify Logo" className="navbar-logo" />
+            <h1>Cognify</h1>
+          </Link>
         </div>
 
         {/* When on Career Assessment page, only show logo (no nav links or auth) */}
@@ -70,7 +72,7 @@ function Navbar() {
               ) : (
                 <>
                   <li><a href="#about" onClick={closeMenu}>About</a></li>
-                  <li><a href="#scholarships" onClick={closeMenu}>Scholarships</a></li>
+                  <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
                   <li><Link to="/colleges" onClick={closeMenu}>Colleges</Link></li>
                   <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
                 </>

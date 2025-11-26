@@ -2,6 +2,10 @@ import React from 'react'
 import './Hero.css'
 import { Link } from 'react-router-dom'
 
+import iconEducation from '../assets/icon-education.png'
+import iconCareer from '../assets/icon-career.png'
+import iconCollege from '../assets/icon-college.png'
+
 function Hero() {
   return (
     <section className="hero">
@@ -21,10 +25,9 @@ function Hero() {
             <br />find colleges and secure scholarships.
           </p>
 
-          <Link to="/signup">
+          <Link to="/signup" style={{ textDecoration: 'none' }}>
             <button className="hero-btn">
               Choose Your Future with Confidence
-              <span className="arrow">→</span>
             </button>
           </Link>
         </div>
@@ -52,7 +55,7 @@ function Hero() {
       <div className="problem-section">
         <h2 className="section-title">The Problem Students Face <span className="title-arrow">→</span></h2>
         <p className="problem-subtitle">Every year, thousands of students struggle with critical decisions that shape their future</p>
-        
+
         <div className="problem-cards">
           <div className="problem-card">
             <h3>CONFUSION AT STREAM SELECTION</h3>
@@ -96,6 +99,7 @@ function Hero() {
             <div className="journey-number">04</div>
             <p className="journey-label">Scholarships</p>
           </div>
+          <div className="journey-connector"></div>
         </div>
       </div>
 
@@ -104,17 +108,23 @@ function Hero() {
         <h2 className="section-title">WHAT ALL WE PROVIDE <span className="title-arrow">→</span></h2>
         <div className="services-grid">
           <div className="service-card">
-            <div className="service-icon">📚</div>
+            <div className="service-icon">
+              <img src={iconEducation} alt="Education" />
+            </div>
             <h3>EDUCATION</h3>
             <p>Visit expert professional resources to enhance skills and discover educational opportunities</p>
           </div>
           <div className="service-card">
-            <div className="service-icon">💼</div>
+            <div className="service-icon">
+              <img src={iconCareer} alt="Career Guidance" />
+            </div>
             <h3>CAREER GUIDANCE</h3>
             <p>Personalized career paths aligned with your strengths and market demand</p>
           </div>
           <div className="service-card">
-            <div className="service-icon">🎓</div>
+            <div className="service-icon">
+              <img src={iconCollege} alt="College Matching" />
+            </div>
             <h3>COLLEGE MATCHING</h3>
             <p>Find the perfect colleges that match your profile and aspirations</p>
           </div>

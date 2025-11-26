@@ -19,7 +19,7 @@ function Footer() {
           <div className="footer-column">
             <h4>ABOUT</h4>
             <ul>
-              <li><a href="#about">About</a></li>
+              {/* <li><a href="#about">About</a></li> Removed as it duplicates the header */}
               <li><a href="#services">Services</a></li>
               <li><a href="#technologies">Technologies</a></li>
               <li><a href="#how-to-use">How to Use</a></li>
@@ -33,7 +33,7 @@ function Footer() {
           <div className="footer-column">
             <h4>F.A.Q</h4>
             <ul>
-              <li><a href="#faq">F.A.Q</a></li>
+              {/* <li><a href="#faq">F.A.Q</a></li> Removed as it duplicates the header */}
               <li><a href="#sitemap">Sitemap</a></li>
               <li><a href="#conditions">Conditions</a></li>
               <li><a href="#licenses">Licenses</a></li>
@@ -46,16 +46,21 @@ function Footer() {
 
         {/* Social & Right Section */}
         <div className="footer-right-section">
-          <div className="social-icons">
-            <a href="#facebook" className="social-link"><FaFacebookF /></a>
-            <a href="#twitter" className="social-link"><FaTwitter /></a>
-            <a href="#linkedin" className="social-link"><FaLinkedinIn /></a>
-            <a href="#youtube" className="social-link"><FaYoutube /></a>
-            <a href="#instagram" className="social-link"><FaInstagram /></a>
-            <a href="#pinterest" className="social-link"><FaPinterest /></a>
-          </div>
-          <div className="footer-input-container">
-            {/* Placeholder for the rounded input/button area in screenshot */}
+          <div className="footer-right-content">
+            <div className="social-icons">
+              <a href="#linkedin" className="social-link"><FaLinkedinIn /></a>
+              <a href="#youtube" className="social-link"><FaYoutube /></a>
+              <a href="#instagram" className="social-link"><FaInstagram /></a>
+            </div>
+            <div className="footer-input-container">
+              <input type="email" placeholder="Email" className="footer-email-input" />
+              <button className="footer-email-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -63,6 +68,12 @@ function Footer() {
       {/* Bottom Contact Bar */}
       <div className="footer-bottom-bar">
         <div className="contact-item">
+          <div className="contact-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
           <span className="contact-label">Pay Us a Visit</span>
           <span className="contact-sub">Union St, Seattle, WA 98101, United States</span>
         </div>

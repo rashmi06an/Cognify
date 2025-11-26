@@ -39,6 +39,7 @@
   margin: 0;
   background: linear-gradient(90deg, #FFFFFF, #E0E0E0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -66,6 +67,13 @@
   font-weight: 700;
   margin-bottom: 20px;
   color: #FFFFFF;
+  transition: color 0.3s;
+  cursor: pointer;
+  /* Or pointer if they are meant to be clickable, but they are headers */
+}
+
+.footer-column h4:hover {
+  color: #a855f7;
 }
 
 .footer-column ul {
@@ -94,16 +102,24 @@
 /* Right Section */
 .footer-right-section {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 30px;
+  justify-content: flex-end;
+  /* Aligns the wrapper to the right */
   flex: 1;
   min-width: 250px;
 }
 
+.footer-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Aligns icons and input to the left relative to each other */
+  gap: 20px;
+}
+
 .social-icons {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
 }
 
 .social-link {
@@ -129,10 +145,54 @@
 .footer-input-container {
   width: 100%;
   max-width: 250px;
-  height: 50px;
-  background: linear-gradient(90deg, #8176AF, #C0B7E8);
+  /* Reduced from 300px */
+  height: 40px;
+  /* Reduced from 50px */
+  background-color: #5D5076;
+  /* Darker purple background */
   border-radius: 25px;
-  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  /* Adjusted padding */
+  box-sizing: border-box;
+}
+
+.footer-email-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+.footer-email-input::placeholder {
+  color: #C0B7E8;
+  opacity: 0.7;
+}
+
+.footer-email-btn {
+  background: #C0B7E8;
+  /* Lighter purple button */
+  border: none;
+  width: 32px;
+  /* Reduced from 36px */
+  height: 32px;
+  /* Reduced from 36px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #302C42;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.footer-email-btn:hover {
+  background-color: #FFFFFF;
 }
 
 /* Bottom Contact Bar */
@@ -211,7 +271,14 @@
   }
 
   .footer-right-section {
+    justify-content: center;
+    /* Center the wrapper on mobile */
+  }
+
+  .footer-right-content {
     align-items: center;
+    /* Center items inside wrapper on mobile */
+    gap: 30px;
   }
 
   .footer-bottom-bar {
