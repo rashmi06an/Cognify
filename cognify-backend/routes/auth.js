@@ -1,7 +1,7 @@
-import express from "express";
-import User from "./models/User.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+const express = require("express");
+const User = require("./models/User.js");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
@@ -33,7 +33,6 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -62,4 +61,4 @@ router.post("/forgot-password", (req, res) => {
   res.json({ message: "Password reset link sent to email (placeholder)" });
 });
 
-export default router;
+module.exports = router;
