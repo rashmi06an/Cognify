@@ -10,17 +10,18 @@ const Signup = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
 
+console.log("API URL:", import.meta.env.VITE_API_URL);
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password }),
-        }
-      );
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-      const data = await res.json();
+      const text = await res.text();
+      console.log("RAW RESPONSE:", text);
+
+      const data = text ? JSON.parse(text) : {};
 
       if (res.ok) {
         alert("Signup successful! You can now log in.");
@@ -29,11 +30,10 @@ const Signup = () => {
         alert(data.message || "Signup failed.");
       }
     } catch (error) {
+      console.error(error);
       alert("Something went wrong. Please try again.");
-      console.log(error);
     }
   };
-
 
   return (
     <div className="signup-page">
