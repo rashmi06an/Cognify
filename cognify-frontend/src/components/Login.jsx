@@ -5,11 +5,37 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // In a real app, we would validate credentials here
-    navigate("/dashboard");
+
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem("token", data.token);
+        navigate("/dashboard");
+      } else {
+        alert(data.message || "Invalid credentials");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.log(error);
+    }
   };
+
+
 
   return (
     <div className="auth-page">

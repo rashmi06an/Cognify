@@ -2,27 +2,57 @@ import React from "react";
 import "./Signup.css";
 
 const Signup = () => {
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Signup successful! You can now log in.");
+        e.target.reset();
+      } else {
+        alert(data.message || "Signup failed.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.log(error);
+    }
+  };
+
+
   return (
     <div className="signup-page">
       <div className="signup-card">
         <h1 className="signup-title">JOIN THE COGNIFY COMMUNITY</h1>
         <div className="signup-divider" />
-        <h2 className="signup-subtitle">Lets Build Your  Career</h2>
+        <h2 className="signup-subtitle">Let's Build Your Career</h2>
 
-        <form className="signup-form">
+        <form className="signup-form" onSubmit={handleSignup}>
           <div className="signup-row">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder="Enter Your Name" required />
           </div>
+
           <div className="signup-row">
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
+            <input type="email" placeholder="Email" required />
           </div>
+
           <div className="signup-row">
-            <input type="text" placeholder="Subject" />
-          </div>
-          <div className="signup-row">
-            <textarea rows="4" placeholder="Tell Us Something..." />
+            <input type="text" placeholder="Password" required />
           </div>
 
           <button type="submit" className="signup-btn">
