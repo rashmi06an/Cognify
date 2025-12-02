@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 
+import imgCareerAssessment from "../assets/career_assesment.png";
+import imgScholarship from "../assets/scholarship.png";
+import imgCollegeFinder from "../assets/college_finder.png";
+import imgCareerExplorer from "../assets/career_explorer.png";
+
 const Dashboard = () => {
   const navigate = useNavigate();
   return (
@@ -31,7 +36,7 @@ const Dashboard = () => {
         <div className="dashboard-grid">
           <div className="dashboard-card">
             <div className="dashboard-card-inner">
-              <div className="card-icon card-icon--assessment" />
+              <img src={imgCareerAssessment} alt="Career Assessment" className="card-icon" />
               <div className="card-content">
                 <h3>Career Assessment</h3>
                 <p>
@@ -49,7 +54,7 @@ const Dashboard = () => {
 
           <div className="dashboard-card">
             <div className="dashboard-card-inner">
-              <div className="card-icon card-icon--scholarships" />
+              <img src={imgScholarship} alt="Scholarships" className="card-icon" />
               <div className="card-content">
                 <h3>Scholarships</h3>
                 <p>
@@ -62,7 +67,7 @@ const Dashboard = () => {
 
           <div className="dashboard-card">
             <div className="dashboard-card-inner">
-              <div className="card-icon card-icon--college" />
+              <img src={imgCollegeFinder} alt="College Finder" className="card-icon" />
               <div className="card-content">
                 <h3>College Finder</h3>
                 <p>
@@ -75,7 +80,7 @@ const Dashboard = () => {
 
           <div className="dashboard-card">
             <div className="dashboard-card-inner">
-              <div className="card-icon card-icon--explorer" />
+              <img src={imgCareerExplorer} alt="Career Explorer" className="card-icon" />
               <div className="card-content">
                 <h3>Career Explorer</h3>
                 <p>
@@ -104,9 +109,8 @@ const Dashboard = () => {
               <div className="quick-action-visual quick-action-visual--right-glow" />
             </div>
 
-            <div className="quick-action-sparkles">✱ ✱</div>
-
             <div className="quick-action-card quick-action-card--chat">
+              <div className="quick-action-visual quick-action-visual--left-glow" />
               <div className="quick-action-text">
                 <h3>Chat with AI Expert</h3>
                 <p>
@@ -114,9 +118,7 @@ const Dashboard = () => {
                   in your journey towards success.
                 </p>
               </div>
-              <div className="quick-action-visual quick-action-visual--left-glow" />
             </div>
-            <div className="quick-action-sparkles">✱ ✱</div>
           </div>
         </div>
 

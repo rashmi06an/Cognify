@@ -1,11 +1,13 @@
 .dashboard-page {
   min-height: 100vh;
-  padding: 96px 72px 80px;
+  padding: 88px 48px 72px;
   background:
     radial-gradient(60% 40% at 50% 85%, #4c2bb3 0%, transparent 55%),
     #05030b;
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  max-width: 100%;
+  width: 100%;
 }
 
 .dashboard-hero {
@@ -73,158 +75,103 @@
 }
 
 .dashboard-grid-section {
-  margin-bottom: 32px;
+  margin: 24px auto 40px;
+  padding: 24px 48px;
+  max-width: 1400px;
+  width: 95%;
+  border-radius: 28px;
+  background:
+    radial-gradient(120% 220% at 50% 50%, rgba(137, 88, 255, 0.65) 0%, rgba(9, 1, 24, 0.95) 55%, rgba(5, 3, 11, 1) 100%);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.85);
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  gap: 40px;
+  width: 100%;
 }
 
 .dashboard-card {
-  padding: 32px 40px 36px;
-  border-radius: 28px;
-  background:
-    radial-gradient(140% 180% at 0% 0%, #5b35c7 0%, #221139 45%, #12081e 90%);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+  padding: 24px 40px 24px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #2a1b54 0%, #150b2e 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 160px;
 }
 
 .dashboard-card-inner {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: flex-start;
+  gap: 40px;
   width: 100%;
 }
 
 .card-icon {
   width: 140px;
   height: 140px;
-  border-radius: 24px;
-  position: relative;
-  background: radial-gradient(120% 150% at 10% 0%, #6b4bff 0%, #2b0f4a 55%, #0a0315 100%);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
-  overflow: hidden;
+  min-width: 140px;
+  flex-shrink: 0;
+  object-fit: contain;
+  /* Remove old background/shadow styles */
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
+/* Remove old pseudo-elements for icons */
 .card-icon::before,
 .card-icon::after {
-  content: "";
-  position: absolute;
-}
-
-/* Career Assessment: badge with star */
-.card-icon--assessment::before {
-  left: 32px;
-  top: 18px;
-  width: 56px;
-  height: 90px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #7b5cff 0%, #3b1f7a 80%);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
-}
-
-.card-icon--assessment::after {
-  left: 46px;
-  top: 44px;
-  width: 28px;
-  height: 28px;
-  background: conic-gradient(from 0deg, #ffffff, #f6e6ff, #9fd3ff, #ffffff);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-
-/* Scholarships: glowing orb */
-.card-icon--scholarships::before {
-  left: 32px;
-  top: 34px;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 20%, #ffe9ff 0%, #ffb6ff 30%, #ff7ad9 55%, #ffb96b 85%);
-  box-shadow: 0 0 40px rgba(255, 142, 255, 0.8);
-}
-
-.card-icon--scholarships::after {
-  left: 20px;
-  bottom: 22px;
-  width: 96px;
-  height: 40px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
-}
-
-/* College Finder: hat */
-.card-icon--college::before {
-  left: 16px;
-  bottom: 30px;
-  width: 98px;
-  height: 40px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 50% 0%, #7a4bff 0%, #3a1c86 60%, #0a0315 100%);
-}
-
-.card-icon--college::after {
-  left: 40px;
-  bottom: 54px;
-  width: 56px;
-  height: 42px;
-  border-radius: 60% 60% 40% 40%;
-  background: linear-gradient(160deg, #bba7ff 0%, #7f5cff 45%, #43209a 100%);
-}
-
-/* Career Explorer: jellyfish / comet */
-.card-icon--explorer::before {
-  left: 30px;
-  top: 34px;
-  width: 70px;
-  height: 70px;
-  border-radius: 60% 40% 50% 50%;
-  transform: rotate(-22deg);
-  background: radial-gradient(circle at 10% 0%, #c6d2ff 0%, #8fb4ff 30%, #6b4bff 65%, #321182 100%);
-}
-
-.card-icon--explorer::after {
-  right: -18px;
-  bottom: 18px;
-  width: 110px;
-  height: 34px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 0% 50%, rgba(123, 173, 255, 0.9) 0%, rgba(123, 173, 255, 0) 70%);
+  content: none;
+  display: none;
 }
 
 .card-content h3 {
   margin: 0 0 10px;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
+  color: #ffffff;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-content p {
   margin: 0;
   font-size: 16px;
-  color: #f0e7ff;
+  color: #e0d4fc;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .dashboard-card-btn {
-  margin-top: 24px;
-  align-self: flex-start;
-  padding: 10px 26px;
-  border-radius: 999px;
-  border: 1px solid #c9b7ff;
-  background: rgba(7, 2, 24, 0.3);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #5a3e85;
+  background: #3b2063;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: all 0.2s ease;
+  margin-top: 0;
+  /* Spacing handled by p margin */
 }
 
 .dashboard-card-btn:hover {
-  background: #f5f3ff;
-  color: #1a102a;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
-  transform: translateY(-1px);
+  background: #4c2bb3;
+  border-color: #6c42e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dashboard-upper-section {
@@ -296,9 +243,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 32px;
+  justify-content: space-between;
+  gap: 40px;
   min-height: 220px;
+  width: 100%;
 }
 
 .quick-action-card--scholarships {
@@ -307,6 +255,7 @@
 
 .quick-action-card--chat {
   padding-right: 80px;
+  flex-direction: row-reverse;
 }
 
 .quick-action-text h3 {
@@ -324,8 +273,8 @@
 
 .quick-action-visual {
   position: relative;
-  width: 480px;
-  height: 300px;
+  width: 520px;
+  height: 320px;
   border-radius: 32px;
   background: radial-gradient(circle at 50% 0%, rgba(140, 110, 255, 0.55) 0%, rgba(12, 3, 30, 0.8) 55%, #05030b 100%);
   box-shadow: 0 0 90px rgba(140, 110, 255, 0.6);
@@ -340,8 +289,6 @@
   margin-right: auto;
 }
 
-/* Optional: background screenshots (replace with your own image paths) */
-
 .quick-action-card--scholarships .quick-action-visual {
   background:
     radial-gradient(circle at 50% 0%, rgba(140, 110, 255, 0.45) 0%, rgba(12, 3, 30, 0.7) 55%, #05030b 100%),
@@ -354,11 +301,6 @@
     url("../assets/AI_Expart.png") center/contain no-repeat;
 }
 
-.quick-action-sparkles {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 18px;
-}
 
 /* Journey card */
 
@@ -377,10 +319,12 @@
 .journey-card {
   display: flex;
   flex-direction: column;
-  padding: 40px 56px 40px;
+  padding: 48px 64px 48px;
   border-radius: 32px;
   background: linear-gradient(180deg, #4b2fb9 0%, #251044 45%, #100619 100%);
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.9);
+  max-width: 1200px;
+  width: 100%;
 }
 
 .journey-steps {
@@ -424,7 +368,8 @@
 }
 
 .journey-step:first-of-type .journey-step-icon {
-  top: 4px; /* pehla circle thoda upar */
+  top: 4px;
+  /* pehla circle thoda upar */
 }
 
 .journey-step--completed .journey-step-icon {
@@ -486,6 +431,22 @@
   background: #111111;
 }
 
+@media (max-width: 1200px) {
+  .dashboard-page {
+    padding: 88px 32px 56px;
+  }
+
+  .dashboard-grid-section {
+    width: 90%;
+    padding: 20px 32px;
+  }
+
+  .quick-action-visual {
+    width: 480px;
+    height: 300px;
+  }
+}
+
 @media (max-width: 900px) {
   .dashboard-page {
     padding: 88px 20px 56px;
@@ -498,5 +459,24 @@
 
   .dashboard-grid {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid-section {
+    width: 95%;
+    padding: 16px 24px;
+  }
+
+  .quick-action-visual {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+  }
+
+  .quick-action-card--scholarships {
+    padding-left: 20px;
+  }
+
+  .quick-action-card--chat {
+    padding-right: 20px;
   }
 }
