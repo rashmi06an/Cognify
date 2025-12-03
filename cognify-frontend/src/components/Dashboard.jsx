@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import { useEffect } from "react";
+import axios from "axios";
 
 
 import imgCareerAssessment from "../assets/career_assesment.png";
@@ -10,6 +12,17 @@ import imgCareerExplorer from "../assets/career_explorer.png";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function dashAuth() {
+      const reesponse = await axios.get('/dashboard')
+      if (reesponse.status !== 200){
+        navigate('/')
+      }
+    }
+    dashAuth()
+  },[])
+  
   return (
     <div className="dashboard-page">
       <div className="dashboard-hero">

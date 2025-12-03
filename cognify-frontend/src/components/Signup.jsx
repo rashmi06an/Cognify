@@ -10,7 +10,7 @@ const Signup = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
 
-console.log("API URL:", import.meta.env.VITE_API_URL);
+    console.log("API URL:", import.meta.env.VITE_API_URL);
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signup`, {
         method: "POST",

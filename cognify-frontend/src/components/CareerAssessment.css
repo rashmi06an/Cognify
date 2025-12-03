@@ -219,3 +219,52 @@
     padding: 16px;
   }
 }
+
+/* ===== Input field styling (for the actual <input> element) ===== */
+.assessment-input-area input[type="text"] {
+  flex: 1;
+  min-width: 0;                  /* allow shrinking in flex container */
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(124, 59, 255, 0.18);
+  background: rgba(255,255,255,0.03);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  margin-right: 12px;            /* space between input and send button */
+}
+
+/* subtle focus state */
+.assessment-input-area input[type="text"]:focus {
+  border-color: rgba(168,85,247,0.9);
+  box-shadow: 0 0 12px rgba(168,85,247,0.12);
+}
+
+/* placeholder color */
+.assessment-input-area input[type="text"]::placeholder {
+  color: rgba(160, 174, 192, 0.65);
+}
+
+/* ensure button stays same size on small screens */
+.assessment-input-area .input-send-btn {
+  flex: 0 0 auto;
+}
+
+/* mobile tweaks - full width input and stacked spacing */
+@media (max-width: 480px) {
+  .assessment-input-area {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .assessment-input-area input[type="text"] {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .assessment-input-area .input-send-btn {
+    align-self: flex-end;
+  }
+}
