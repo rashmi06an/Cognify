@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import logoImg from '../assets/Logo_1.png'
 import { Link, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -10,6 +11,8 @@ function Navbar() {
   const location = useLocation()
   const isDashboard = location.pathname === '/dashboard'
   const isCareerAssessment = location.pathname === '/career-assessment'
+  const isLoggedIn = Boolean(localStorage.getItem("token"));   // <-- ADDED
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -41,12 +44,16 @@ function Navbar() {
     <nav className={`navbar ${isScrolling ? 'scroll-hide' : ''} ${isDashboard ? 'navbar-dashboard' : ''}`}>
       <div className="navbar-container">
         {/* Logo/Brand Section */}
-        <div className="navbar-brand">
-          <Link to={(location.pathname === '/colleges' || location.pathname === '/scholarships') ? '/dashboard' : '/'} className="navbar-logo-link">
-            <img src={logoImg} alt="Cognify Logo" className="navbar-logo" />
-            <h1>Cognify</h1>
-          </Link>
-        </div>
+          <div className="navbar-brand">
+            <Link
+              to={localStorage.getItem("token") ? "/dashboard" : "/"}
+              className="navbar-logo-link"
+            >
+              <img src={logoImg} alt="Cognify Logo" className="navbar-logo" />
+              <h1>Cognify</h1>
+            </Link>
+          </div>
+
 
         {/* When on Career Assessment page, only show logo (no nav links or auth) */}
         {!isCareerAssessment && (
@@ -60,28 +67,19 @@ function Navbar() {
 
             {/* Navigation Links */}
             <ul className={`navbar-menu ${menuOpen ? 'active' : ''} ${isDashboard ? 'dashboard-menu' : ''}`}>
-              {isDashboard ? (
+              { (
                 <>
                   <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
-                  <li><Link to="/career-quiz" onClick={closeMenu}>Career Quiz</Link></li>
-                  <li><Link to="/explore-careers" onClick={closeMenu}>Explore Careers</Link></li>
                   <li><Link to="/colleges" onClick={closeMenu}>Find Colleges</Link></li>
                   <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
-                  <li><Link to="/expert-chat" onClick={closeMenu}>Expert Chat</Link></li>
-                </>
-              ) : (
-                <>
-                  <li><a href="#about" onClick={closeMenu}>About</a></li>
-                  <li><Link to="/scholarships" onClick={closeMenu}>Scholarships</Link></li>
-                  <li><Link to="/colleges" onClick={closeMenu}>Colleges</Link></li>
-                  <li><a href="#jobs" onClick={closeMenu}>Jobs</a></li>
+                  <li><a href="#about" onClick={() => navigate('/about')}>About</a></li>
                 </>
               )}
             </ul>
 
             {/* Right Side - Auth Buttons or Profile */}
             <div className="navbar-auth">
-              {isDashboard ? (
+              {isLoggedIn ? (
                 <div className="navbar-profile">
                   <div className="profile-icon"></div>
                 </div>

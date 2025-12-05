@@ -51,7 +51,7 @@
 .navbar-logo {
   height: 45px;
   width: 45px;
-  animation: slideInLogo 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  /* animation: slideInLogo 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; */
   object-fit: contain;
 }
 
@@ -93,9 +93,9 @@
   }
 }
 
-.navbar-brand:hover .navbar-logo {
+/* .navbar-brand:hover .navbar-logo {
   animation: bounceSlide 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+} */
 
 @keyframes bounceSlide {
   0% {

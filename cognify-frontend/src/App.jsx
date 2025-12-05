@@ -9,6 +9,8 @@ import CareerAssessment from './components/CareerAssessment'
 import CareerResults from './components/CareerResults'
 import ScholarshipPage from './components/ScholarshipPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import About from './components/About'
+import CareerExplorer from './components/CareerExplorer'
 
 function App() {
 
@@ -32,6 +34,9 @@ function App() {
         <Route path="/career-results" element={<CareerResults />} />
         <Route path="/colleges" element={<CareerResults />} />
         <Route path="/scholarships" element={<ScholarshipPage />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/careers" element={<CareerExplorer/>} />
+
       </Routes>
 
       <Footer />

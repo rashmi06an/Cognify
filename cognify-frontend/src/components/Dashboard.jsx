@@ -100,7 +100,7 @@ const Dashboard = () => {
                   Explore high-demand careers with salary insights and growth
                   projections.
                 </p>
-                <button className="dashboard-card-btn">Explore Careers</button>
+                <button className="dashboard-card-btn" onClick={() => navigate('/careers')}>Explore Careers</button>
               </div>
             </div>
           </div>
@@ -114,14 +114,25 @@ const Dashboard = () => {
           <h2 className="quick-actions-title">Quick Actions</h2>
 
           <div className="quick-actions-grid">
+            {/* Scholarships Quick Action */}
             <div className="quick-action-card quick-action-card--scholarships">
               <div className="quick-action-text">
                 <h3>Browse Scholarships</h3>
                 <p>Get access to good scholarships from across India and globe.</p>
+
+                {/* Added Button */}
+                <button
+                  className="quick-action-btn"
+                  onClick={() => navigate("/scholarships")}
+                >
+                  Explore Scholarships →
+                </button>
               </div>
+
               <div className="quick-action-visual quick-action-visual--right-glow" />
             </div>
 
+            {/* AI Chat - NO BUTTON */}
             <div className="quick-action-card quick-action-card--chat">
               <div className="quick-action-visual quick-action-visual--left-glow" />
               <div className="quick-action-text">
@@ -133,6 +144,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="journey-section">
