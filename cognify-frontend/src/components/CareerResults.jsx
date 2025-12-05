@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./CareerResults.css";
 
-import ibmImg from "../assets/IBM.jpg";
-import bitsImg from "../assets/BitsPilani.png";
-import iimImg from "../assets/IIM_Ahmedabad_New.jpg";
-import iiitImg from "../assets/IIIT_Hyderabad.png";
-import iitDelhiImg from "../assets/IIT_Delhi.png";
+import ibmImg from "../assets/defaultCollege.png";
+import bitsImg from "../assets/defaultCollege.png";
+import iimImg from "../assets/defaultCollege.png";
+import iiitImg from "../assets/defaultCollege.png";
+import iitDelhiImg from "../assets/defaultCollege.png";
 
 const imageMap = {
   "IBM.jpg": ibmImg,

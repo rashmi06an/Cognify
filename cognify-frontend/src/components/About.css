@@ -14,7 +14,7 @@
   overflow-x: hidden;
 }
 
-/* Background floating glowing orbs */
+
 .about-bg-orb {
   position: absolute;
   border-radius: 50%;
@@ -66,13 +66,13 @@
   color: #cbbce7;
 }
 
-/* Content Layout */
+
 .about-content {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Main Cards */
+
 .about-card {
   background: rgba(40, 10, 80, 0.5);
   border: 1px solid rgba(150, 80, 255, 0.3);
@@ -83,16 +83,15 @@
   box-shadow: 0 0 40px rgba(120, 60, 255, 0.15);
 }
 
-/* Update the .section-title class to be more specific */
+
 .about-page .section-title {
   font-size: 2rem;
   margin-bottom: 15px;
   color: #b598ff;
-  background: none; /* Removes the pink gradient */
-  -webkit-text-fill-color: #b598ff; /* Ensures the purple color is applied */
+  background: none;
+  -webkit-text-fill-color: #b598ff;
 }
 
-/* Grid for features */
 .about-grid {
   display: grid;
   gap: 20px;
@@ -113,7 +112,6 @@
   margin-bottom: 10px;
 }
 
-/* Team Section */
 .team-card .team-grid {
   display: flex;
   justify-content: space-around;

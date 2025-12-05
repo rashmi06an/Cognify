@@ -5,7 +5,7 @@
   min-height: 100vh;
 }
 
-/* HEADER */
+
 .ce-header {
   text-align: center;
   margin-bottom: 40px;
@@ -24,8 +24,8 @@
   opacity: 0.8;
 }
 
-/* SECTION TITLE */
-.section-title {
+
+.section-title-head {
   font-size: 28px;
   margin-bottom: 20px;
   background: linear-gradient(90deg, #ff7eb3, #ff758c);
@@ -33,7 +33,7 @@
   color: transparent;
 }
 
-/* JOBS */
+
 .job-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -71,7 +71,7 @@
   cursor: pointer;
 }
 
-/* CAREER PATHS */
+
 .career-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -94,7 +94,7 @@
   margin-bottom: 8px;
 }
 
-/* SKILLS */
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +108,7 @@
   border: 1px solid #7d2cff;
 }
 
-/* SALARY */
+
 .salary-box {
   background: #12182c;
   padding: 20px;
@@ -116,13 +116,12 @@
   max-width: 450px;
 }
 
-/* CTA */
 .cta-section {
   margin-top: 50px;
   text-align: center;
 }
 
-.cta-btn {
+.cta-btn-explore {
   padding: 14px 25px;
   background: linear-gradient(90deg, #00c6ff, #7d2cff);
   color: white;

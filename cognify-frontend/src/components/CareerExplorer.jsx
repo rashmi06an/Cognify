@@ -58,7 +58,7 @@ export default function CareerExplorer() {
            CAREER PATHS
       ================================= */}
       <section className="career-section">
-        <h2 className="section-title">🎯 Your Best Career Paths</h2>
+        <h2 className="section-title-head">🎯 Your Best Career Paths</h2>
 
         <div className="career-grid">
           {careers.map((career, index) => (
@@ -113,7 +113,7 @@ export default function CareerExplorer() {
         <h2>Not sure where to start?</h2>
         <p>Take the AI-powered Career Assessment to discover your perfect career path.</p>
 
-        <button className="cta-btn" onClick={() => (window.location.href = "/career-assessment")}>
+        <button className="cta-btn-explore" onClick={() => (window.location.href = "/career-assessment")}>
           Start Career Assessment
         </button>
       </section>
