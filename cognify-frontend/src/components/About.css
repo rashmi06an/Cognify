@@ -40,8 +40,13 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(20px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
 }
 
 .about-header {
@@ -78,10 +83,13 @@
   box-shadow: 0 0 40px rgba(120, 60, 255, 0.15);
 }
 
-.section-title {
+/* Update the .section-title class to be more specific */
+.about-page .section-title {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #d9c7ff;
+  color: #b598ff;
+  background: none; /* Removes the pink gradient */
+  -webkit-text-fill-color: #b598ff; /* Ensures the purple color is applied */
 }
 
 /* Grid for features */
