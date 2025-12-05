@@ -6,8 +6,6 @@ const questions = [
   "What skills do you feel you are strongest at?",
   "What kind of tasks give you energy — creative, analytical, or hands-on?",
   "Do you prefer working alone or collaborating with a team?",
-  "What are your long-term career goals or dreams?",
-  "Which industries or fields excite you the most?",
   "What type of work environment do you prefer (structured, flexible, research-oriented, fast-paced)?",
   "Any preferences like budget, city, online/offline learning?"
 ];

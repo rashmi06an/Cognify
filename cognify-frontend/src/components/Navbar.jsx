@@ -67,7 +67,7 @@ function Navbar() {
 
             {/* Navigation Links */}
             <ul className={`navbar-menu ${menuOpen ? 'active' : ''} ${isDashboard ? 'dashboard-menu' : ''}`}>
-              { (
+              {isDashboard && (
                 <>
                   <li><Link to="/dashboard" onClick={closeMenu}>Dashboard</Link></li>
                   <li><Link to="/colleges" onClick={closeMenu}>Find Colleges</Link></li>

@@ -22,6 +22,12 @@ const userSchema = new mongoose.Schema({
     default: null
   },
 
+  // 🔥 NEW FIELD — store assessment completion status
+  assessmentCompleted: {
+    type: Boolean,
+    default: false
+  }
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", userSchema);
