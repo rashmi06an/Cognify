@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -10,7 +13,8 @@ const Signup = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
 
-    console.log("API URL:", import.meta.env.VITE_API_URL);
+    setLoading(true);
+
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signup`, {
         method: "POST",
@@ -19,20 +23,20 @@ const Signup = () => {
       });
 
       const text = await res.text();
-      console.log("RAW RESPONSE:", text);
-
       const data = text ? JSON.parse(text) : {};
 
       if (res.ok) {
-        alert("Signup successful! You can now log in.");
-        e.target.reset();
+        alert("Signup successful! Redirecting to Login...");
+        navigate("/login");
       } else {
         alert(data.message || "Signup failed.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Signup Error:", error);
       alert("Something went wrong. Please try again.");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -52,11 +56,11 @@ const Signup = () => {
           </div>
 
           <div className="signup-row">
-            <input type="text" placeholder="Password" required />
+            <input type="password" placeholder="Password" required />
           </div>
 
-          <button type="submit" className="signup-btn">
-            Submit
+          <button type="submit" className="signup-btn" disabled={loading}>
+            {loading ? <div className="loader"></div> : "Submit"}
           </button>
         </form>
       </div>

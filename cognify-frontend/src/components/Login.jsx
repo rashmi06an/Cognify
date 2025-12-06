@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     const email = e.target[0].value;
     const password = e.target[1].value;
+
+    setLoading(true);
 
     try {
       const res = await fetch(
@@ -31,11 +34,10 @@ const Login = () => {
       }
     } catch (error) {
       alert("Something went wrong. Please try again.");
-      console.log(error);
     }
+
+    setLoading(false);
   };
-
-
 
   return (
     <div className="auth-page">
@@ -62,8 +64,12 @@ const Login = () => {
             </button>
           </div>
 
-          <button type="submit" className="auth-btn">
-            Login
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? (
+              <div className="loader"></div>
+            ) : (
+              "Login"
+            )}
           </button>
 
           <p className="auth-note">
